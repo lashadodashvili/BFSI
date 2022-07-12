@@ -26,18 +26,15 @@ ol {
 li {
     margin-left: 25px;
     color: white;
-
 }
 
 li:hover {
     color: black;
-
 }
 
 header h1 {
     font-size: 45px;
     color: white;
-
 }
 
 .search {
@@ -54,13 +51,81 @@ header h1 {
     width: 0px;
     transition: width 2s;
     color: white;
-
 }
 
 .block {
     display: block;
     border-bottom: 1.5px solid white;
     width: 100%;
+}
 
+/* first- section styles */
+
+.first-section {
+    
+    height: 780px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form {
+    background-color: white;
+    height: 60%;
+    padding: 90px 100px;
+    margin-left: -100px;
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 40px 40px;
+}
+
+.sign {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.sign h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sign p {
+    font-weight: bold;
+}
+
+#first-name {
+    margin-bottom: 20px;
+    width: 260px;
+    height: 30px;
+}
+
+#last-name {
+    margin-bottom: 20px;
+    width: 260px;
+    height: 30px;
+}
+
+.next {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #707070;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+}
+
+.registration-form-text {
+    margin-left: 55px;
+}
+
+.registration-form-text h1 {
+    font-size: 24px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.registration-form-text p {
+    margin-bottom: 5px;
 
 }

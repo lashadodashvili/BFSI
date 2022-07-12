@@ -48,6 +48,11 @@ next.addEventListener("click", () => {
 
 
 
+let profiles = [{ name: "Sebastian Bennett", position: "Founder", avatar: "./imgs/oval.png" }, { name: "Graham Griffiths", position: "Manager", avatar: "./imgs/oval1.png" }, { name: "Monica Böttger", position: "Designer", avatar: "./imgs/oval2.png" }, { name: "Leon Hunt", position: "Developer", avatar: "./imgs/oval3.png" }]
+
+
+
+
 
 
 

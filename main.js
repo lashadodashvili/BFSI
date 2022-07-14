@@ -362,7 +362,19 @@ function goLeft() {
         }
     }
 }
-goLeft()
+goLeft() 
+
+
+
+
+
+// function for our work button 
+let ourWork = document.querySelector(".ourworks-btn")
+let ourWorkSections = document.querySelector(".our-work-section")   
+
+ourWork.addEventListener("click",()=>{
+    ourWorkSections.classList.toggle("block")
+})
 
 
 

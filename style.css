@@ -79,6 +79,7 @@ header h1 {
     padding: 90px 100px;
     margin-left: -100px;
     box-shadow: rgba(0, 0, 0, 0.35) 10px 40px 40px;
+    border-radius: 15px;
 }
 
 .sign {
@@ -281,6 +282,7 @@ header h1 {
     display: flex;
     margin-top: 170px;
     overflow: hidden;
+
 }
 
 .card {
@@ -291,6 +293,8 @@ header h1 {
     margin-right: 24px;
     transition: left 2s;
     transition-timing-function: linear;
+    border-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 
@@ -304,3 +308,40 @@ header h1 {
     flex-direction: column;
     margin-left: 20px;
 }
+
+
+
+
+/* style for our work button  */
+.our-work-button-container {
+    margin-top: 700px;
+    margin-right: 200px;
+}
+
+.our-work-section {
+    display: none;
+    
+}
+
+.ourworks-btn {
+    margin-top: 700px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.arrow-left {
+    width: 40px;
+    height: 40px;
+}
+
+.block {
+    display: block;
+}
+
+

@@ -169,7 +169,8 @@ function createBox() {
         // rightBox.appendChild(boxRightContainer);
         // rightContainer.appendChild(rightBox); 
 
-        profileAvatar.addEventListener("click", () => {
+        profileAvatar.addEventListener("click", (e) => {
+
 
             let avatar1 = document.createElement("img");
             avatar1.classList.add("profileAvatar");
@@ -178,16 +179,24 @@ function createBox() {
 
             rightBox.appendChild(avatar1);
 
+            let boxRightContainer1 = document.createElement("div");
+            let profileText1 = document.createElement("div");
+
+            profileText1.classList.add("profileText");
+
+            let media1 = document.createElement("div");
+            media1.classList.add("medias")
+
             let profileName1 = document.createElement("p");
             profileName1.innerText = item.name;
-            profileText.appendChild(profileName1);
-            rightBox.appendChild(profileName1);
+            profileText1.appendChild(profileName1);
 
 
             let profilePosition1 = document.createElement("p");
             profilePosition1.innerText = item.position;
-            profileText.appendChild(profilePosition1);
-            rightBox.appendChild(profilePosition1);
+
+            profileText1.appendChild(profilePosition1);
+            boxRightContainer1.appendChild(profileText1);
 
             let fburl1 = document.createElement("a");
             let fbImg1 = document.createElement("img");
@@ -195,7 +204,7 @@ function createBox() {
             fburl1.target = "_blank";
             fbImg1.src = item.media.facebook.img;
             fburl1.appendChild(fbImg1);
-            rightBox.appendChild(fburl1)
+            media1.appendChild(fburl1)
 
 
             let twiturl1 = document.createElement("a");
@@ -204,7 +213,7 @@ function createBox() {
             twiturl1.target = "_blank";
             twitImg1.src = item.media.twiter.img;
             twiturl1.appendChild(twitImg1);
-            rightBox.appendChild(twiturl1);
+            media1.appendChild(twiturl1);
 
 
             let insturl1 = document.createElement("a");
@@ -213,7 +222,11 @@ function createBox() {
             insturl1.target = "_blank";
             instImg1.src = item.media.instagram.img;
             insturl1.appendChild(instImg1);
-            rightBox.appendChild(insturl1);
+            media1.appendChild(insturl1);
+
+            boxRightContainer1.appendChild(media1);
+            rightBox.appendChild(boxRightContainer1);
+
 
 
 
@@ -223,7 +236,15 @@ function createBox() {
 
             rightContainerImg.style.display = "none";
 
-            rightBox.style.display = "flex";
+            rightBox.style.display = "grid";
+
+
+            if (rightBox.firstChild) {
+                rightBox.innerHTML = '';
+                rightBox.appendChild(avatar1);
+                rightBox.appendChild(boxRightContainer1);
+                profileText1.style.textAlign = "center";
+            }
         })
 
 
@@ -232,11 +253,117 @@ function createBox() {
 createBox();
 
 
+let data = [
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third1.png',
+        txt1: 'Shirline Dungey',
+        txt2: 'Apple'
+
+    },
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third2.png',
+        txt1: 'Hector Mariano',
+        txt2: 'Google'
+
+    },
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third3.png',
+        txt1: 'Tiontay Carroll',
+        txt2: 'Facebook'
+
+    },
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third4.png',
+        txt1: 'Hector Mariano',
+        txt2: 'Google'
+
+    },
+
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third1.png',
+        txt1: 'Dungey',
+        txt2: 'Apple'
+
+    },
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third2.png',
+        txt1: 'Shirline Dungey',
+        txt2: 'Apple'
+
+    },
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third3.png',
+        txt1: 'Shirline Dungey',
+        txt2: 'Apple'
+
+    },
+    {
+        txt: 'Quidam officiis similique indoctum platonem singulis ornatus nam maiestatis everti invenire intellegam, legendos consequuntur eu sit.',
+        img: './imgs/third4.png',
+        txt1: 'Shirline Dungey',
+        txt2: 'Apple'
+
+    },]
+
+
+let cards = document.querySelector(".cards");
+
+function creatCard() {
+    data.map((item, index) => {
+        let card = document.createElement("div");
+        card.classList.add("card");
+        card.classList.add("card"+index);
+        let cardText = document.createElement("p")
+        let cardProfile = document.createElement("div");
+        cardProfile.classList.add("card-profile");
+        let cardAvatar = document.createElement("img");
+        let cardInfo = document.createElement("div");
+        cardInfo.classList.add("card-info");
+        let cardInfoTitle = document.createElement("p");
+        let cardInfoDescription = document.createElement("p");
+        cardInfo.appendChild(cardInfoTitle);
+        cardInfo.appendChild(cardInfoDescription);
+        cardProfile.appendChild(cardAvatar);
+        cardProfile.appendChild(cardInfo);
+        card.appendChild(cardText);
+        card.appendChild(cardProfile);
+
+
+        cardText.innerText = item.txt;
+        cardAvatar.src = item.img;
+        cardInfoTitle.innerText = item.txt1
+        cardInfoDescription.innerText = item.txt2
+
+        cards.appendChild(card)
+
+    })
+}
+
+creatCard()
+
+
+function goLeft() {
+    for (let i = 0; i < cards.length; i++) {
+        let card = document.querySelector(`.card${i}`)
+        let firstCard = document.querySelector('.card0')
+        if (firstCard.getBoundingClientRect().left == 0) {
+            card.style.left = `${card.style.width * i - ((cards.length - 1) * card.style.width)}px`
+        } else {
+            let leftBefore = card.getBoundingClientRect().left
+            let left = `${leftBefore + card.style.width}px`
+            card.style.left = left
+        }
+    }
+}
+goLeft()
 
 
 
 
-
-
-// profileAvatar.addEventListener("click", () => {
-//     

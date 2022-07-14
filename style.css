@@ -138,6 +138,7 @@ header h1 {
 
     background-image: linear-gradient(to right, #FF8B00, #ff8c008e, #ff8c008e, #FF8B00);
     width: 100%;
+    height: 1000px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -219,6 +220,11 @@ header h1 {
 .right-box {
     display: none;
     align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    padding: 20px;
+
 }
 
 
@@ -228,6 +234,73 @@ header h1 {
 .section-third {
     width: 100%;
     height: 1000px;
-    background-image: url(../BFSI/imgs/section-third.background.png);
+    background-image: url(./imgs/section-third.background.png);
     background-size: cover;
+}
+
+.section-third-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-third-text h1 {
+    font-size: 54px;
+    font-weight: bold;
+    margin-top: 250px;
+}
+
+.section-third-text p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+
+.containers {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    background-color: aqua;
+    overflow: hidden;
+    height: 50vh;
+}
+
+.colorBox {
+    position: absolute;
+    width: 20vw;
+    height: 50vh;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s linear;
+}
+
+.cards {
+    display: flex;
+    margin-top: 170px;
+    overflow: hidden;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    background-color: white;
+    margin-right: 24px;
+    transition: left 2s;
+    transition-timing-function: linear;
+}
+
+
+.card-profile {
+    display: flex;
+    margin-top: 30px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
 }

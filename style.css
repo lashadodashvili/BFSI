@@ -1,5 +1,6 @@
 body {
     max-width: 1920px;
+    width: 100%;
 }
 
 
@@ -62,13 +63,14 @@ header h1 {
 /* first- section styles */
 
 .first-section {
-    
+
     height: 780px;
     background-repeat: no-repeat;
     display: flex;
     align-content: space-between;
     justify-content: center;
     align-items: center;
+    background-size: cover;
 }
 
 .registration-form {
@@ -128,4 +130,93 @@ header h1 {
 .registration-form-text p {
     margin-bottom: 5px;
 
+}
+
+/* section second styles */
+
+.second-section {
+
+    background-image: linear-gradient(to right, #FF8B00, #ff8c008e, #ff8c008e, #FF8B00);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+
+.profile-section {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 50px;
+    margin-left: 50px;
+
+}
+
+.box {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+    padding: 40px 0;
+}
+
+.left-container h1 {
+    font-size: 54px;
+    font-weight: bold;
+    max-width: 300px;
+}
+
+.left-container-text {
+    display: flex;
+
+    margin-left: 50px;
+    margin-bottom: 50px;
+
+}
+
+.left-container-text p {
+    max-width: 200px;
+}
+
+.right-container {
+    display: flex;
+    justify-content: center;
+    order: 2;
+}
+
+.profileAvatar {
+    margin-right: 20px;
+}
+
+.medias {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.profileText p:last-of-type {
+    margin: 8px 0;
+}
+
+#right-container-image {
+    display: block;
+}
+
+.box div {
+    width: 100%;
+}
+
+
+.right-box{
+    display: none;
+    align-items: center;
 }

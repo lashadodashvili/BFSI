@@ -319,7 +319,7 @@ function creatCard() {
     data.map((item, index) => {
         let card = document.createElement("div");
         card.classList.add("card");
-        card.classList.add("card"+index);
+        card.classList.add("card" + index);
         let cardText = document.createElement("p")
         let cardProfile = document.createElement("div");
         cardProfile.classList.add("card-profile");
@@ -338,10 +338,10 @@ function creatCard() {
 
         cardText.innerText = item.txt;
         cardAvatar.src = item.img;
-        cardInfoTitle.innerText = item.txt1
-        cardInfoDescription.innerText = item.txt2
+        cardInfoTitle.innerText = item.txt1;
+        cardInfoDescription.innerText = item.txt2;
 
-        cards.appendChild(card)
+        cards.appendChild(card);
 
     })
 }
@@ -362,19 +362,81 @@ function goLeft() {
         }
     }
 }
-goLeft() 
+goLeft()
 
 
 
 
 
 // function for our work button 
-let ourWork = document.querySelector(".ourworks-btn")
-let ourWorkSections = document.querySelector(".our-work-section")   
+// let ourWork = document.querySelector(".ourworks-btn");
+// let ourWorkSections = document.querySelector(".our-work-section");
 
-ourWork.addEventListener("click",()=>{
-    ourWorkSections.classList.toggle("block")
+// ourWork.addEventListener("click", () => {
+//     ourWorkSections.classList.toggle("block");
+// })
+
+
+
+
+
+// section four clickebi 
+
+
+
+let neoBank = document.querySelector(".section-four-cards1");
+let ai = document.querySelector(".section-four-cards2")
+let finTech = document.querySelector(".section-four-cards3");
+let blokchain = document.querySelector(".section-four-cards4");
+
+
+let allButton = document.querySelector(".all-btn");
+let blokchainBtn = document.querySelector(".blokchain-btn");
+let finTechBtn = document.querySelector(".fintech-btn");
+let neoBankBtn = document.querySelector(".neobank-btn");
+let aiBtn = document.querySelector(".ai-btn");
+
+
+neoBankBtn.addEventListener("click", () => {
+
+    neoBank.classList.toggle("section-four-block");
 })
+
+blokchainBtn.addEventListener("click", () => {
+    blokchain.classList.toggle("section-four-block");
+})
+
+finTechBtn.addEventListener("click", () => {
+    finTech.classList.toggle("section-four-block");
+})
+aiBtn.addEventListener("click", () => {
+    ai.classList.toggle("section-four-block");
+})
+
+allButton.addEventListener("click", () => {
+    neoBank.classList.toggle("section-four-block");
+    blokchain.classList.toggle("section-four-block");
+    finTech.classList.toggle("section-four-block");
+    ai.classList.toggle("section-four-block");
+})
+
+
+neoBank.addEventListener("click", () => {
+    neoBank.classList.toggle("section-four-cards-style")
+})
+ai.addEventListener("click", () => {
+    ai.classList.toggle("section-four-cards-style")
+})
+finTech.addEventListener("click", () => {
+    finTech.classList.toggle("section-four-cards-style")
+})
+blokchain.addEventListener("click", () => {
+    blokchain.classList.toggle("section-four-cards-style")
+})
+
+
+
+
 
 
 

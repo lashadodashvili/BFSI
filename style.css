@@ -1,6 +1,11 @@
 body {
     max-width: 1920px;
     width: 100%;
+
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 
@@ -143,6 +148,7 @@ header h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
 }
 
 
@@ -320,12 +326,13 @@ header h1 {
 
 .our-work-section {
     display: none;
-    
+
+
 }
+
 
 .ourworks-btn {
     margin-top: 700px;
-
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -333,6 +340,7 @@ header h1 {
     color: white;
     border: none;
     font-size: 20px;
+
 }
 
 .arrow-left {
@@ -342,6 +350,144 @@ header h1 {
 
 .block {
     display: block;
+
 }
 
 
+/* style for section four  */
+.section-four {
+    width: 100%;
+    height: 1200px;
+    background-image: url("./imgs/section.four.background.png");
+    background-size: cover;
+}
+
+.section-foru-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+
+}
+
+.section-foru-title h1 {
+    font-size: 52px;
+    margin-top: 120px;
+}
+
+.section-foru-title p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+
+.section-four-buttons button {
+    padding: 10px 50px;
+    margin-top: 55px;
+}
+
+.section-four-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.section-four-cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 130px;
+
+
+
+
+}
+
+.section-four-cards1 {
+    background-image: url("./imgs/section.four.png");
+    background-size: cover;
+    width: 250px;
+    height: 450px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+
+
+}
+
+.section-four-cards2 {
+    background-image: url("./imgs/section.four1.png");
+    background-size: cover;
+    width: 250px;
+    height: 450px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.section-four-cards3 {
+    background-image: url("./imgs/section.four2.png");
+    background-size: cover;
+    width: 250px;
+    height: 450px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+
+}
+
+.section-four-cards4 {
+    background-image: url("./imgs/section.four3.png");
+    background-size: cover;
+    width: 250px;
+    height: 450px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+
+
+}
+
+.card-title1 {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.card-title1 h2 {
+    width: 0;
+}
+
+.card-description1 {
+    opacity: 0.5;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.card-icon1 {
+    margin-left: 10px;
+}
+
+.section-four-block {
+    display: block;
+    background-size: cover;
+    width: 250px;
+    height: 450px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.section-four-cards-style {
+    width: 300px;
+}

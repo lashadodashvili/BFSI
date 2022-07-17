@@ -66,7 +66,7 @@ leftSection.appendChild(profileSection)
 
 let profiles = [
     {
-        name: "Sebastian Bennett", position: "Founder", avatar: "./imgs/oval.png",
+        name: "Sebastian Bennett", position: "Founder", avatar: "../imgs/oval.png",
         media: {
             facebook: { img: "./imgs/facebook.png", url: "https://www.facebook.com/" },
             twiter: { img: "./imgs/twitter.png", url: "https://twitter.com/?lang=en" },
@@ -74,7 +74,15 @@ let profiles = [
         }
     },
     {
-        name: "Graham Griffiths", position: "Manager", avatar: "./imgs/oval1.png",
+        name: "Graham Griffiths", position: "Manager", avatar: "../imgs/oval1.png",
+        media: {
+            facebook: { img: "./imgs/facebook.png", url: "https://www.facebook.com/" },
+            twiter: { img: "../imgs/twitter.png", url: "https://twitter.com/?lang=en" },
+            instagram: { img: "./imgs/instagram.png", url: "https://www.instagram.com/" }
+        }
+    },
+    {
+        name: "Monica Böttger", position: "Designer", avatar: "../imgs/oval2.png",
         media: {
             facebook: { img: "./imgs/facebook.png", url: "https://www.facebook.com/" },
             twiter: { img: "./imgs/twitter.png", url: "https://twitter.com/?lang=en" },
@@ -82,15 +90,7 @@ let profiles = [
         }
     },
     {
-        name: "Monica Böttger", position: "Designer", avatar: "./imgs/oval2.png",
-        media: {
-            facebook: { img: "./imgs/facebook.png", url: "https://www.facebook.com/" },
-            twiter: { img: "./imgs/twitter.png", url: "https://twitter.com/?lang=en" },
-            instagram: { img: "./imgs/instagram.png", url: "https://www.instagram.com/" }
-        }
-    },
-    {
-        name: "Leon Hunt", position: "Developer", avatar: "./imgs/oval3.png", media: {
+        name: "Leon Hunt", position: "Developer", avatar: "../imgs/oval3.png", media: {
             facebook: { img: "./imgs/facebook.png", url: "https://www.facebook.com/" },
             twiter: { img: "./imgs/twitter.png", url: "https://twitter.com/?lang=en" },
             instagram: { img: "./imgs/instagram.png", url: "https://www.instagram.com/" }

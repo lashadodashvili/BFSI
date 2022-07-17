@@ -588,7 +588,7 @@ footer {
 .section-five-card-description,
 .section-five-card-price {
     display: none;
-    animation: hideMe 2s forwards;
+    animation: hideMe 3s forwards;
 }
 
 @keyframes hideMe {

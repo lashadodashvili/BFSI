@@ -347,43 +347,104 @@ function creatCard() {
 }
 
 creatCard()
+var card = document.querySelectorAll('.card');
+var arrayOfcard = Array.prototype.slice.call(card);
+var cardCarouseling;
+var screenSize;
+setScreenSize();
+var lengthOfcard;
+
+function addClone() {
+    var lastcard = cards.lastElementChild.cloneNode(true);
+    lastcard.style.left = (-lengthOfcard) + "px";
+    cards.insertBefore(lastcard, cards.firstChild);
+}
+// addClone();
+
+function removeClone() {
+    var firstcard = cards.firstElementChild;
+    firstcard.parentNode.removeChild(firstcard);
+}
+
+function moveSlidesLeft() {
+    var card = document.querySelectorAll('.card');
+    var cardArray = Array.prototype.slice.call(card);
+    cardArray = cardArray.reverse();
+    var maxWidth = (cardArray.length - 1) * lengthOfcard;
+
+    cardArray.forEach(function (el, i) {
+        maxWidth -= lengthOfcard;
+        el.style.left = maxWidth + "px";
+    });
+}
+
+window.addEventListener('resize', setScreenSize);
+
+function setScreenSize() {
+    if (window.innerWidth >= 1024) {
+        cardCarouseling = 4;
+    } else if (window.innerWidth <= 768) {
+        cardCarouseling = 2;
+    } else {
+        cardCarouseling = 1;
+    }
+    getScreenSize();
+}
+
+function getScreenSize() {
+    var card = document.querySelectorAll('.card');
+    var cardArray = Array.prototype.slice.call(card);
+    lengthOfcard = (cards.offsetWidth / cardCarouseling);
+    var initialWidth = -lengthOfcard;
+    cardArray.forEach(function (el) {
+        el.style.width = lengthOfcard + "px";
+        el.style.left = initialWidth + "px";
+        initialWidth += lengthOfcard;
+    });
+}
+var moving = true;
+
+function activateAgain() {
+    var firstcard = cards.firstElementChild;
+    moving = true;
+    firstcard.removeEventListener('transitionend', activateAgain);
+}
 
 
-function goLeft() {
-    for (let i = 0; i < cards.length; i++) {
-        let card = document.querySelector(`.card${i}`)
-        let firstCard = document.querySelector('.card0')
-        if (firstCard.getBoundingClientRect().left == 0) {
-            card.style.left = `${card.style.width * i - ((cards.length - 1) * card.style.width)}px`
-        } else {
-            let leftBefore = card.getBoundingClientRect().left
-            let left = `${leftBefore + card.style.width}px`
-            card.style.left = left
-        }
+function moveLeft() {
+    console.log('fdfd');
+    if (moving) {
+        moving = false;
+        removeClone();
+        var firstcard = cards.firstElementChild;
+        firstcard.addEventListener('transitionend', replaceToEnd);
+        moveSlidesLeft();
     }
 }
-goLeft()
+
+let arrows = document.querySelector(".ourworks-btn");
+
+arrows.addEventListener("click", () => setInterval(moveLeft, 1000));
+
+
+function replaceToEnd() {
+    var firstcard = cards.firstElementChild;
+    firstcard.parentNode.removeChild(firstcard);
+    cards.appendChild(firstcard);
+    firstcard.style.left = ((arrayOfcard.length - 1) * lengthOfcard) + "px";
+    addClone();
+    moving = true;
+    firstcard.removeEventListener('transitionend', replaceToEnd);
+}
 
 
 
-
-
-// function for our work button 
-// let ourWork = document.querySelector(".ourworks-btn");
-// let ourWorkSections = document.querySelector(".our-work-section");
-
-// ourWork.addEventListener("click", () => {
-//     ourWorkSections.classList.toggle("block");
-// })
 
 
 
 
 
 // section four clickebi 
-
-
-
 let neoBank = document.querySelector(".section-four-cards1");
 let ai = document.querySelector(".section-four-cards2")
 let finTech = document.querySelector(".section-four-cards3");
@@ -398,7 +459,6 @@ let aiBtn = document.querySelector(".ai-btn");
 
 
 neoBankBtn.addEventListener("click", () => {
-
     neoBank.classList.toggle("section-four-block");
 })
 
@@ -436,8 +496,79 @@ blokchain.addEventListener("click", () => {
 
 
 
+let thePlan = [{
+    img: './imgs/section-four-icon.png',
+    title: 'Normal plan ',
+    description: 'lorem deterruisset Hinc lorem Autem molestiae Mei mazim Feugait electram',
+    price: '24$',
+},
+
+{
+    img: './imgs/section-four-icon.png',
+    title: 'Normal plan ',
+    description: 'lorem deterruisset Hinc lorem Autem molestiae Mei mazim Feugait electram',
+    price: '24$',
+},
+{
+    img: './imgs/section-four-icon.png',
+    title: 'Normal plan ',
+    description: 'lorem deterruisset Hinc lorem Autem molestiae Mei mazim Feugait electram',
+    price: '24$',
+}
+]
+
+let sectionFive = document.querySelector(".section-five")
+let sectionFiveCards = document.createElement("div")
+sectionFiveCards.classList.add("sectionFiveCards")
+
+sectionFive.appendChild(sectionFiveCards)
 
 
+function creatCards() {
+    thePlan.map((item) => {
+        let card = document.createElement("div")
+        card.classList.add("section-five-card")
+        let cardIcon = document.createElement("img")
+        cardIcon.classList.add("section-five-card-icon")
+        card.appendChild(cardIcon)
+        let cardTitle = document.createElement("div")
+        cardTitle.classList.add("section-five-card-title")
+        card.appendChild(cardTitle)
+        let cardDescription = document.createElement("div")
+        cardDescription.classList.add("section-five-card-description")
+        card.appendChild(cardDescription)
+        let cardPrice = document.createElement("div")
+        cardPrice.classList.add("section-five-card-price")
+        card.appendChild(cardPrice)
+
+        sectionFiveCards.appendChild(card)
+
+
+        cardIcon.src = item.img
+        cardTitle.innerText = item.title
+        cardDescription.innerText = item.description
+        cardPrice.innerText = item.price
+
+        card.addEventListener("click", () => {
+            if (cardDescription.style.display == "block" && cardPrice.style.display == "block") {
+                cardDescription.style.display = "none"
+                cardPrice.style.display = "none"
+            } else {
+                cardDescription.style.display = "block"
+                cardPrice.style.display = "block"
+            }
+
+        })
+
+
+
+
+
+
+
+    })
+}
+creatCards()
 
 
 

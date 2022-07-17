@@ -68,14 +68,18 @@ header h1 {
 /* first- section styles */
 
 .first-section {
-
-    height: 780px;
     background-repeat: no-repeat;
     display: flex;
-    align-content: space-between;
-    justify-content: center;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+.first-section-container {
+    display: flex;
+    align-self: stretch;
     align-items: center;
-    background-size: cover;
+    justify-content: center;
+    padding: 60px 0;
 }
 
 .registration-form {
@@ -273,32 +277,25 @@ header h1 {
     height: 50vh;
 }
 
-.colorBox {
-    position: absolute;
-    width: 20vw;
-    height: 50vh;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 1s linear;
-}
 
 .cards {
-    display: flex;
-    margin-top: 170px;
+    position: relative;
     overflow: hidden;
-
+    transition: width .4s;
+    height: 30%;
+    margin-top: 40px;
 }
 
 .card {
+
+    position: absolute;
+    z-index: 1;
+    transition: left .4s cubic-bezier(.47, .13, .15, .89);
     display: flex;
     flex-direction: column;
     padding: 32px;
     background-color: white;
     margin-right: 24px;
-    transition: left 2s;
-    transition-timing-function: linear;
     border-radius: 15px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -318,11 +315,6 @@ header h1 {
 
 
 
-/* style for our work button  */
-.our-work-button-container {
-    margin-top: 700px;
-    margin-right: 200px;
-}
 
 .our-work-section {
     display: none;
@@ -332,7 +324,6 @@ header h1 {
 
 
 .ourworks-btn {
-    margin-top: 700px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -348,16 +339,12 @@ header h1 {
     height: 40px;
 }
 
-.block {
-    display: block;
 
-}
 
 
 /* style for section four  */
 .section-four {
     width: 100%;
-    height: 1200px;
     background-image: url("./imgs/section.four.background.png");
     background-size: cover;
 }
@@ -490,4 +477,128 @@ header h1 {
 
 .section-four-cards-style {
     width: 300px;
+}
+
+
+
+/* style for section-five */
+.section-five {
+    width: 100%;
+}
+
+.section-five-cards-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-five-cards-title h1 {
+    font-size: 56px;
+    font-weight: bold;
+    margin-top: 170px;
+
+}
+
+.section-five-cards-title p {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+/* style for section five from javascript */
+
+.sectionFiveCards {
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-evenly;
+}
+
+.section-five-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EFEFEF;
+    padding: 54px 72px 32px 72px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 15px;
+}
+
+.section-five-card-icon {
+    width: 26px;
+    height: 26px;
+
+}
+
+.section-five-card-title {
+    margin-top: 42px;
+}
+
+.section-five-card-description {
+    margin-top: 40px;
+    width: 100px;
+    text-align: center;
+}
+
+.section-five-card-price {
+    margin-top: 47px;
+}
+
+
+
+/* style for footer  */
+footer {
+    background-image: url("./imgs/footer.bacground.png");
+    background-size: cover;
+    height: 330px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    color: white;
+    align-items: center;
+}
+
+.about h1 {
+    margin-bottom: 80px;
+    font-weight: bold;
+}
+
+.about p {
+    opacity: 0.5;
+}
+
+.logo {
+    display: flex;
+    color: white;
+}
+
+.contact {
+    color: white;
+    opacity: 0.5;
+}
+
+.logo {
+    font-size: 56px;
+}
+
+.section-five-card-description,
+.section-five-card-price {
+    display: none;
+    animation: hideMe 2s forwards;
+}
+
+@keyframes hideMe {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
 }

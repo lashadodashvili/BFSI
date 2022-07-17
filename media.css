@@ -1,0 +1,70 @@
+@media(max-width:768px) {
+    .profile-section {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+
+    .left-container-text {
+        flex-direction: column;
+    }
+
+    .right-container {
+        justify-content: flex-start;
+    }
+
+    #right-container-image {
+        width: 200px;
+    }
+
+    .first-section-container {
+        flex-direction: column;
+
+        align-self: center;
+        align-items: stretch;
+    }
+
+    .registration-form-text {
+        margin-left: 0;
+    }
+
+    .section-four-buttons button {
+        padding: 5px 30px;
+    }
+
+    .section-four-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sectionFiveCards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+@media(max-width:600px) {
+
+    .section-four-buttons button {
+        padding: 5px 10px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .registration-form {
+        padding: 60px 70px;
+    }
+
+    .section-four-cards{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
